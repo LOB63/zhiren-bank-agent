@@ -1,0 +1,1 @@
+.record-caption{position:fixed;bottom:0;left:0;right:0;z-index:20;background:#183d35;color:#fff;padding:18px 34px;font-family:"Microsoft YaHei",sans-serif;font-size:21px;line-height:1.5;min-height:72px;pointer-events:none;box-shadow:0 -2px 10px #0001}body:has(.record-caption){padding-bottom:80px}

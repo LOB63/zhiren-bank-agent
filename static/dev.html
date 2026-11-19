@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>智人银行 · 开发调试</title><link rel="stylesheet" href="/static/style.css"><script src="/static/dev.js" defer></script></head>
+<body><main class="dev-shell">
+  <header class="dev-header"><div><p class="eyebrow">开发者工具</p><h1>开发调试</h1></div><a href="/">返回智人银行</a></header>
+  <p class="notice">本页直接调用模拟业务后端，用于检查草稿和确认流程，不调用大模型。创建的测试记录会保存到当前账户，不能用作 Agent 能力证据。</p>
+  <div class="surface"><h2>运行与模型配置</h2><p>在本机项目目录的 <code>.env</code> 中设置 <code>DEEPSEEK_API_KEY</code>，保存后重启服务。密钥只在本机配置，不要粘贴到网页或对话。</p><p id="dev-model" class="muted">正在读取服务状态…</p><p>架构与学习材料见项目中的 <code>docs/learning-guide.md</code>，版本安排见 <code>docs/product-plan-2026-10-19.md</code>，原每日计划保留在 <code>docs/daily-plan.md</code>。</p></div>
+  <p id="dev-session" role="status">正在核对登录状态…</p>
+  <div id="dev-controls" hidden>
+    <div class="surface"><h2>手动验证转账草稿</h2><form id="manual-transfer"><label>收款人<select id="manual-recipient" required></select></label><div class="form-row"><label>金额（元）<input id="manual-amount" type="number" min="0.01" max="1000000" step="0.01" value="200" required></label><label>最低保留余额（元）<input id="manual-reserve" type="number" min="0" step="0.01" value="3000" required></label></div><button class="secondary" type="submit">创建待确认转账</button></form></div>
+    <div class="surface"><h2>手动验证订阅取消草稿</h2><form id="manual-subscription"><label>当前有效订阅<select id="manual-subscription-id" required></select></label><button id="manual-cancel" class="secondary" type="submit">创建待确认取消</button></form></div>
+  </div>
+  <div id="dev-result" class="surface" hidden aria-live="polite"><h2>验证结果</h2><p id="dev-result-text"></p><a href="/">返回助手查看操作卡，核对后确认</a></div>
+  <p class="fineprint">调试页沿用当前登录会话和权限检查。草稿创建后不会扣款或取消订阅，仍需在助手页面明确确认。</p>
+</main></body></html>
