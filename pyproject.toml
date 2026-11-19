@@ -1,0 +1,9 @@
+[project]
+name = "bank-agent-2026"
+version = "0.3.0"
+description = "可审计的个人收支与订阅优化模拟银行 Agent"
+requires-python = ">=3.13"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
